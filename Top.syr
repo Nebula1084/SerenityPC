@@ -1,0 +1,1345 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: Top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "ParallelCarry4.v" in library work
+Compiling verilog file "pg_to_PG.v" in library work
+Module <ParallelCarry4> compiled
+Compiling verilog file "Adder4.v" in library work
+Module <pg_to_PG> compiled
+Compiling verilog file "Adder16.v" in library work
+Module <Adder4> compiled
+Compiling verilog file "ZBziku.v" in library work
+Module <Adder16> compiled
+Compiling verilog file "ipcore_dir/BankB.v" in library work
+Module <ZBziku> compiled
+Compiling verilog file "ipcore_dir/BankA.v" in library work
+Module <BankB> compiled
+Compiling verilog file "Adder64.v" in library work
+Module <BankA> compiled
+Compiling verilog file "vag.v" in library work
+Module <Adder64> compiled
+Compiling verilog file "Memory.v" in library work
+Module <vga_dis> compiled
+Compiling verilog file "AluControl.v" in library work
+Module <Memory> compiled
+Compiling verilog file "AdderAndSubber64.v" in library work
+Module <AluControl> compiled
+Compiling verilog file "RegisterFile.v" in library work
+Module <AdderAndSubber64> compiled
+Compiling verilog file "MemoryManagerUnit.v" in library work
+Module <RegisterFile> compiled
+Compiling verilog file "ControlUnit.v" in library work
+Module <MemoryManagerUnit> compiled
+Compiling verilog file "ALU.v" in library work
+Module <ControlUnit> compiled
+Compiling verilog file "NumIn.v" in library work
+Module <ALU> compiled
+Module <NumIn> compiled
+Module <pbdebounce> compiled
+Compiling verilog file "MultiCycleCpu.v" in library work
+Module <timer_1ms> compiled
+Compiling verilog file "LCD_dis.v" in library work
+Module <MultiCycleCpu> compiled
+Compiling verilog file "Top.v" in library work
+Module <LCD_dis> compiled
+Module <Top> compiled
+No errors in compilation
+Analysis of file <"Top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Top> in library <work>.
+
+Analyzing hierarchy for module <pbdebounce> in library <work>.
+
+Analyzing hierarchy for module <MultiCycleCpu> in library <work>.
+
+Analyzing hierarchy for module <LCD_dis> in library <work> with parameters.
+	state1 = "000001"
+	state10 = "001010"
+	state11 = "001011"
+	state12 = "001100"
+	state13 = "001101"
+	state14 = "001110"
+	state15 = "001111"
+	state16 = "010000"
+	state17 = "010001"
+	state18 = "010010"
+	state19 = "010011"
+	state2 = "000010"
+	state20 = "010100"
+	state21 = "010101"
+	state22 = "010110"
+	state23 = "010111"
+	state24 = "011000"
+	state25 = "011001"
+	state26 = "011010"
+	state27 = "011011"
+	state28 = "011100"
+	state29 = "011101"
+	state3 = "000011"
+	state30 = "011110"
+	state31 = "011111"
+	state32 = "100000"
+	state33 = "100001"
+	state34 = "100010"
+	state35 = "100011"
+	state36 = "100100"
+	state37 = "100101"
+	state38 = "100110"
+	state39 = "100111"
+	state4 = "000100"
+	state40 = "101000"
+	state41 = "101001"
+	state42 = "101010"
+	state43 = "101011"
+	state44 = "101100"
+	state45 = "101101"
+	state46 = "101110"
+	state47 = "101111"
+	state48 = "110000"
+	state49 = "110001"
+	state5 = "000101"
+	state50 = "110010"
+	state51 = "110011"
+	state52 = "110100"
+	state53 = "110101"
+	state54 = "110110"
+	state55 = "110111"
+	state56 = "111000"
+	state57 = "111001"
+	state58 = "111010"
+	state59 = "111011"
+	state6 = "000110"
+	state7 = "000111"
+	state8 = "001000"
+	state9 = "001001"
+
+Analyzing hierarchy for module <timer_1ms> in library <work>.
+
+Analyzing hierarchy for module <ControlUnit> in library <work>.
+
+Analyzing hierarchy for module <MemoryManagerUnit> in library <work> with parameters.
+	height = "00000000000000000000000000011001"
+	screenBase = "110000000000"
+	width = "00000000000000000000000000101000"
+
+Analyzing hierarchy for module <RegisterFile> in library <work>.
+
+Analyzing hierarchy for module <ALU> in library <work>.
+
+Analyzing hierarchy for module <Memory> in library <work>.
+
+Analyzing hierarchy for module <vga_dis> in library <work>.
+
+Analyzing hierarchy for module <AluControl> in library <work>.
+
+Analyzing hierarchy for module <AdderAndSubber64> in library <work>.
+
+Analyzing hierarchy for module <ZBziku> in library <work>.
+
+Analyzing hierarchy for module <Adder64> in library <work>.
+
+Analyzing hierarchy for module <pg_to_PG> in library <work>.
+
+Analyzing hierarchy for module <ParallelCarry4> in library <work>.
+
+Analyzing hierarchy for module <Adder16> in library <work>.
+
+Analyzing hierarchy for module <pg_to_PG> in library <work>.
+
+Analyzing hierarchy for module <ParallelCarry4> in library <work>.
+
+Analyzing hierarchy for module <Adder4> in library <work>.
+
+Analyzing hierarchy for module <ParallelCarry4> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Top>.
+Module <Top> is correct for synthesis.
+ 
+Analyzing module <pbdebounce> in library <work>.
+Module <pbdebounce> is correct for synthesis.
+ 
+Analyzing module <timer_1ms> in library <work>.
+Module <timer_1ms> is correct for synthesis.
+ 
+Analyzing module <MultiCycleCpu> in library <work>.
+Module <MultiCycleCpu> is correct for synthesis.
+ 
+Analyzing module <ControlUnit> in library <work>.
+Module <ControlUnit> is correct for synthesis.
+ 
+Analyzing module <MemoryManagerUnit> in library <work>.
+	height = 32'sb00000000000000000000000000011001
+	screenBase = 12'b110000000000
+	width = 32'sb00000000000000000000000000101000
+Module <MemoryManagerUnit> is correct for synthesis.
+ 
+Analyzing module <Memory> in library <work>.
+WARNING:Xst:2211 - "ipcore_dir/BankA.v" line 48: Instantiating black box module <BankA>.
+WARNING:Xst:2211 - "ipcore_dir/BankB.v" line 60: Instantiating black box module <BankB>.
+Module <Memory> is correct for synthesis.
+ 
+Analyzing module <vga_dis> in library <work>.
+Module <vga_dis> is correct for synthesis.
+ 
+Analyzing module <ZBziku> in library <work>.
+INFO:Xst:2546 - "ZBziku.v" line 30: reading initialization file "ZBzk.coe".
+Module <ZBziku> is correct for synthesis.
+ 
+Analyzing module <RegisterFile> in library <work>.
+INFO:Xst:2546 - "RegisterFile.v" line 39: reading initialization file "RegisterFile.coe".
+Module <RegisterFile> is correct for synthesis.
+ 
+Analyzing module <ALU> in library <work>.
+Module <ALU> is correct for synthesis.
+ 
+Analyzing module <AluControl> in library <work>.
+Module <AluControl> is correct for synthesis.
+ 
+Analyzing module <AdderAndSubber64> in library <work>.
+Module <AdderAndSubber64> is correct for synthesis.
+ 
+Analyzing module <Adder64> in library <work>.
+WARNING:Xst:863 - "Adder64.v" line 29: Name conflict (<cf> and <CF>, renaming cf as cf_rnm0).
+WARNING:Xst:863 - "Adder64.v" line 26: Name conflict (<g> and <G>, renaming g as g_rnm0).
+WARNING:Xst:863 - "Adder64.v" line 30: Name conflict (<of> and <OF>, renaming of as of_rnm0).
+WARNING:Xst:863 - "Adder64.v" line 25: Name conflict (<p> and <P>, renaming p as p_rnm0).
+WARNING:Xst:863 - "Adder64.v" line 31: Name conflict (<pf> and <PF>, renaming pf as pf_rnm0).
+WARNING:Xst:863 - "Adder64.v" line 28: Name conflict (<sf> and <SF>, renaming sf as sf_rnm0).
+WARNING:Xst:863 - "Adder64.v" line 32: Name conflict (<zf> and <ZF>, renaming zf as zf_rnm0).
+Module <Adder64> is correct for synthesis.
+ 
+Analyzing module <pg_to_PG> in library <work>.
+Module <pg_to_PG> is correct for synthesis.
+ 
+Analyzing module <ParallelCarry4> in library <work>.
+Module <ParallelCarry4> is correct for synthesis.
+ 
+Analyzing module <Adder16> in library <work>.
+WARNING:Xst:863 - "Adder16.v" line 29: Name conflict (<cf> and <CF>, renaming cf as cf_rnm0).
+WARNING:Xst:863 - "Adder16.v" line 26: Name conflict (<g> and <G>, renaming g as g_rnm0).
+WARNING:Xst:863 - "Adder16.v" line 30: Name conflict (<of> and <OF>, renaming of as of_rnm0).
+WARNING:Xst:863 - "Adder16.v" line 25: Name conflict (<p> and <P>, renaming p as p_rnm0).
+WARNING:Xst:863 - "Adder16.v" line 31: Name conflict (<pf> and <PF>, renaming pf as pf_rnm0).
+WARNING:Xst:863 - "Adder16.v" line 28: Name conflict (<sf> and <SF>, renaming sf as sf_rnm0).
+WARNING:Xst:863 - "Adder16.v" line 32: Name conflict (<zf> and <ZF>, renaming zf as zf_rnm0).
+Module <Adder16> is correct for synthesis.
+ 
+Analyzing module <Adder4> in library <work>.
+Module <Adder4> is correct for synthesis.
+ 
+Analyzing module <LCD_dis> in library <work>.
+	state1 = 6'b000001
+	state10 = 6'b001010
+	state11 = 6'b001011
+	state12 = 6'b001100
+	state13 = 6'b001101
+	state14 = 6'b001110
+	state15 = 6'b001111
+	state16 = 6'b010000
+	state17 = 6'b010001
+	state18 = 6'b010010
+	state19 = 6'b010011
+	state2 = 6'b000010
+	state20 = 6'b010100
+	state21 = 6'b010101
+	state22 = 6'b010110
+	state23 = 6'b010111
+	state24 = 6'b011000
+	state25 = 6'b011001
+	state26 = 6'b011010
+	state27 = 6'b011011
+	state28 = 6'b011100
+	state29 = 6'b011101
+	state3 = 6'b000011
+	state30 = 6'b011110
+	state31 = 6'b011111
+	state32 = 6'b100000
+	state33 = 6'b100001
+	state34 = 6'b100010
+	state35 = 6'b100011
+	state36 = 6'b100100
+	state37 = 6'b100101
+	state38 = 6'b100110
+	state39 = 6'b100111
+	state4 = 6'b000100
+	state40 = 6'b101000
+	state41 = 6'b101001
+	state42 = 6'b101010
+	state43 = 6'b101011
+	state44 = 6'b101100
+	state45 = 6'b101101
+	state46 = 6'b101110
+	state47 = 6'b101111
+	state48 = 6'b110000
+	state49 = 6'b110001
+	state5 = 6'b000101
+	state50 = 6'b110010
+	state51 = 6'b110011
+	state52 = 6'b110100
+	state53 = 6'b110101
+	state54 = 6'b110110
+	state55 = 6'b110111
+	state56 = 6'b111000
+	state57 = 6'b111001
+	state58 = 6'b111010
+	state59 = 6'b111011
+	state6 = 6'b000110
+	state7 = 6'b000111
+	state8 = 6'b001000
+	state9 = 6'b001001
+Module <LCD_dis> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <LCD_dis>.
+    Related source file is "LCD_dis.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 46                                             |
+    | Transitions        | 46                                             |
+    | Inputs             | 0                                              |
+    | Outputs            | 62                                             |
+    | Clock              | state_change              (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000001                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit register for signal <lcd_d>.
+    Found 1-bit register for signal <lcd_e>.
+    Found 1-bit register for signal <lcd_rs>.
+    Found 22-bit subtractor for signal <$sub0000> created at line 157.
+    Found 8-bit adder for signal <ascii$addsub0000> created at line 52.
+    Found 20-bit up counter for signal <delay_count>.
+    Found 22-bit comparator equal for signal <delay_count$cmp_eq0000> created at line 157.
+    Found 5-bit up counter for signal <dis_count>.
+    Found 20-bit register for signal <num_count>.
+    Found 1-bit register for signal <state_change>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 Counter(s).
+	inferred   7 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <LCD_dis> synthesized.
+
+
+Synthesizing Unit <timer_1ms>.
+    Related source file is "NumIn.v".
+    Found 1-bit register for signal <clk_1ms>.
+    Found 16-bit up counter for signal <cnt>.
+    Found 16-bit comparator greatequal for signal <cnt$cmp_ge0000> created at line 74.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <timer_1ms> synthesized.
+
+
+Synthesizing Unit <ControlUnit>.
+    Related source file is "ControlUnit.v".
+    Found 5-bit register for signal <state>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+Unit <ControlUnit> synthesized.
+
+
+Synthesizing Unit <RegisterFile>.
+    Related source file is "RegisterFile.v".
+    Found 32x32-bit dual-port RAM <Mram_regs> for signal <regs>.
+    Found 32x32-bit dual-port RAM <Mram_regs_ren> for signal <regs>.
+    Found 32x32-bit dual-port RAM <Mram_regs_ren_1> for signal <regs>.
+    Summary:
+	inferred   3 RAM(s).
+Unit <RegisterFile> synthesized.
+
+
+Synthesizing Unit <ZBziku>.
+    Related source file is "ZBziku.v".
+WARNING:Xst:1781 - Signal <regs> is used but never assigned. Tied to default value.
+    Found 4096x16-bit ROM for signal <douta>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <ZBziku> synthesized.
+
+
+Synthesizing Unit <AluControl>.
+    Related source file is "AluControl.v".
+Unit <AluControl> synthesized.
+
+
+Synthesizing Unit <pg_to_PG>.
+    Related source file is "pg_to_PG.v".
+Unit <pg_to_PG> synthesized.
+
+
+Synthesizing Unit <ParallelCarry4>.
+    Related source file is "ParallelCarry4.v".
+Unit <ParallelCarry4> synthesized.
+
+
+Synthesizing Unit <pbdebounce>.
+    Related source file is "NumIn.v".
+    Found 1-bit register for signal <pbreg>.
+    Found 8-bit register for signal <pbshift>.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+Unit <pbdebounce> synthesized.
+
+
+Synthesizing Unit <Memory>.
+    Related source file is "Memory.v".
+WARNING:Xst:647 - Input <adrB<14:12>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit 4-to-1 multiplexer for signal <outA>.
+    Found 14-bit adder for signal <addrAA$addsub0000> created at line 38.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 Multiplexer(s).
+Unit <Memory> synthesized.
+
+
+Synthesizing Unit <vga_dis>.
+    Related source file is "vag.v".
+    Found 10-bit subtractor for signal <ypos>.
+    Found 10-bit subtractor for signal <xpos>.
+    Found 1-bit register for signal <hsync_r>.
+    Found 11-bit comparator greatequal for signal <valid$cmp_ge0000> created at line 35.
+    Found 10-bit comparator greatequal for signal <valid$cmp_ge0001> created at line 35.
+    Found 11-bit comparator less for signal <valid$cmp_lt0000> created at line 35.
+    Found 10-bit comparator less for signal <valid$cmp_lt0001> created at line 35.
+    Found 1-bit register for signal <vsync_r>.
+    Found 1-bit 16-to-1 multiplexer for signal <white>.
+    Found 11-bit up counter for signal <x_cnt>.
+    Found 10-bit up counter for signal <y_cnt>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <vga_dis> synthesized.
+
+
+Synthesizing Unit <Adder4>.
+    Related source file is "Adder4.v".
+    Found 4-bit xor3 for signal <sum>.
+    Found 1-bit xor2 for signal <OF>.
+    Found 1-bit xor4 for signal <PF>.
+    Summary:
+	inferred   5 Xor(s).
+Unit <Adder4> synthesized.
+
+
+Synthesizing Unit <MemoryManagerUnit>.
+    Related source file is "MemoryManagerUnit.v".
+WARNING:Xst:646 - Signal <oldwe> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <oldClk> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 6x7-bit multiplier for signal <lineBase$mult0000> created at line 86.
+    Found 15-bit adder for signal <offset$share0000> created at line 87.
+    Found 15-bit adder for signal <ZBadr>.
+    Found 16-bit register for signal <ZBcode>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+Unit <MemoryManagerUnit> synthesized.
+
+
+Synthesizing Unit <Adder16>.
+    Related source file is "Adder16.v".
+WARNING:Xst:646 - Signal <sf_rnm0<2:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <of_rnm0<2:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cf_rnm0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit xor4 for signal <PF>.
+    Summary:
+	inferred   1 Xor(s).
+Unit <Adder16> synthesized.
+
+
+Synthesizing Unit <Adder64>.
+    Related source file is "Adder64.v".
+WARNING:Xst:646 - Signal <sf_rnm0<2:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <of_rnm0<2:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cf_rnm0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit xor4 for signal <PF>.
+    Summary:
+	inferred   1 Xor(s).
+Unit <Adder64> synthesized.
+
+
+Synthesizing Unit <AdderAndSubber64>.
+    Related source file is "AdderAndSubber64.v".
+WARNING:Xst:646 - Signal <P> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <G> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 64-bit xor2 for signal <tmp>.
+Unit <AdderAndSubber64> synthesized.
+
+
+Synthesizing Unit <ALU>.
+    Related source file is "ALU.v".
+WARNING:Xst:646 - Signal <AddOrSubResult<63:32>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit xor2 for signal <result$xor0000> created at line 48.
+Unit <ALU> synthesized.
+
+
+Synthesizing Unit <MultiCycleCpu>.
+    Related source file is "MultiCycleCpu.v".
+WARNING:Xst:1305 - Output <ExtraOut> is never assigned. Tied to value 0000000000000000.
+WARNING:Xst:646 - Signal <addr<31:15>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <IR>.
+    Found 32-bit register for signal <A>.
+    Found 32-bit register for signal <ALUout>.
+    Found 32-bit register for signal <B>.
+    Found 32-bit register for signal <MDR>.
+    Found 32-bit register for signal <PC>.
+    Found 32-bit 4-to-1 multiplexer for signal <PC$mux0000> created at line 191.
+    Summary:
+	inferred 192 D-type flip-flop(s).
+	inferred  32 Multiplexer(s).
+Unit <MultiCycleCpu> synthesized.
+
+
+Synthesizing Unit <Top>.
+    Related source file is "Top.v".
+    Found 5-bit up counter for signal <RegNum>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <Top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 32x32-bit dual-port RAM                               : 3
+# ROMs                                                 : 1
+ 4096x16-bit ROM                                       : 1
+# Multipliers                                          : 1
+ 6x7-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 8
+ 10-bit subtractor                                     : 2
+ 14-bit adder                                          : 1
+ 15-bit adder                                          : 2
+ 22-bit subtractor                                     : 1
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 16-bit up counter                                     : 2
+ 20-bit up counter                                     : 1
+ 5-bit up counter                                      : 2
+# Registers                                            : 35
+ 1-bit register                                        : 25
+ 16-bit register                                       : 1
+ 20-bit register                                       : 1
+ 32-bit register                                       : 6
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+# Comparators                                          : 7
+ 10-bit comparator greatequal                          : 1
+ 10-bit comparator less                                : 1
+ 11-bit comparator greatequal                          : 1
+ 11-bit comparator less                                : 1
+ 16-bit comparator greatequal                          : 2
+ 22-bit comparator equal                               : 1
+# Multiplexers                                         : 3
+ 1-bit 16-to-1 multiplexer                             : 1
+ 32-bit 4-to-1 multiplexer                             : 2
+# Xors                                                 : 103
+ 1-bit xor2                                            : 17
+ 1-bit xor3                                            : 64
+ 1-bit xor4                                            : 21
+ 64-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <lcd/state/FSM> on signal <state[1:46]> with one-hot encoding.
+----------------------------------------------------------
+ State  | Encoding
+----------------------------------------------------------
+ 000001 | 0000000000000000000000000000000000000000000001
+ 000010 | 0000000000000000000000000000000000000000000010
+ 000011 | 0000000000000000000000000000000000000000000100
+ 000100 | 0000000000000000000000000000000000000000001000
+ 000101 | 0000000000000000000000000000000000000000010000
+ 000110 | 0000000000000000000000000000000000000000100000
+ 000111 | 0000000000000000000000000000000000000001000000
+ 001000 | 0000000000000000000000000000000000000010000000
+ 001001 | 0000000000000000000000000000000000000100000000
+ 001010 | 0000000000000000000000000000000000001000000000
+ 001011 | 0000000000000000000000000000000000010000000000
+ 001100 | 0000000000000000000000000000000000100000000000
+ 001101 | 0000000000000000000000000000000001000000000000
+ 001110 | 0000000000000000000000000000000010000000000000
+ 001111 | 0000000000000000000000000000000100000000000000
+ 010000 | 0000000000000000000000000000001000000000000000
+ 010001 | 0000000000000000000000000000010000000000000000
+ 010010 | 0000000000000000000000000000100000000000000000
+ 010011 | 0000000000000000000000000001000000000000000000
+ 010100 | 0000000000000000000000000010000000000000000000
+ 010101 | 0000000000000000000000000100000000000000000000
+ 010110 | 0000000000000000000000001000000000000000000000
+ 010111 | 0000000000000000000000010000000000000000000000
+ 011000 | 0000000000000000000000100000000000000000000000
+ 011001 | 0000000000000000000001000000000000000000000000
+ 011010 | 0000000000000000000010000000000000000000000000
+ 011011 | 0000000000000000000100000000000000000000000000
+ 011100 | 0000000000000000001000000000000000000000000000
+ 011101 | 0000000000000000010000000000000000000000000000
+ 011110 | 0000000000000000100000000000000000000000000000
+ 011111 | 0000000000000001000000000000000000000000000000
+ 100000 | 0000000000000010000000000000000000000000000000
+ 100001 | 0000000000000100000000000000000000000000000000
+ 100010 | 0000000000001000000000000000000000000000000000
+ 100011 | 0000000000010000000000000000000000000000000000
+ 100100 | 0000000000100000000000000000000000000000000000
+ 100101 | 0000000001000000000000000000000000000000000000
+ 100110 | 0000000010000000000000000000000000000000000000
+ 100111 | 0000000100000000000000000000000000000000000000
+ 101000 | 0000001000000000000000000000000000000000000000
+ 101001 | 0000010000000000000000000000000000000000000000
+ 101010 | 0000100000000000000000000000000000000000000000
+ 101011 | 0001000000000000000000000000000000000000000000
+ 101100 | 0010000000000000000000000000000000000000000000
+ 101101 | 0100000000000000000000000000000000000000000000
+ 101110 | 1000000000000000000000000000000000000000000000
+----------------------------------------------------------
+Reading core <ipcore_dir/BankA.ngc>.
+Reading core <ipcore_dir/BankB.ngc>.
+Loading core <BankA> for timing and area information for instance <banka>.
+Loading core <BankB> for timing and area information for instance <bankb>.
+WARNING:Xst:1293 - FF/Latch <state_4> has a constant value of 0 in block <cu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <num_count>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <num_count>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <15> (without init value) has a constant value of 0 in block <num_count>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <18> (without init value) has a constant value of 0 in block <num_count>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <MultiCycleCpu>.
+INFO:Xst:3230 - The RAM description <regFile/Mram_regs> will not be implemented on the device block RAM because of limited available resources. If you would like this RAM to be implemented in block RAM, please select a larger device or increase the value specified by the BRAM_Utilization_Ratio constraint.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <RegWrite>      | high     |
+    |     addrA          | connected to signal <WR>            |          |
+    |     diA            | connected to signal <regWdata>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <IR>            |          |
+    |     doB            | connected to signal <Rdata1>        |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3230 - The RAM description <regFile/Mram_regs_ren> will not be implemented on the device block RAM because of limited available resources. If you would like this RAM to be implemented in block RAM, please select a larger device or increase the value specified by the BRAM_Utilization_Ratio constraint.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <RegWrite>      | high     |
+    |     addrA          | connected to signal <WR>            |          |
+    |     diA            | connected to signal <regWdata>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <IR>            |          |
+    |     doB            | connected to signal <Rdata2>        |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <regFile/Mram_regs_ren_1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <RegWrite>      | high     |
+    |     addrA          | connected to signal <WR>            |          |
+    |     diA            | connected to signal <regWdata>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <RegNum>        |          |
+    |     doB            | connected to signal <RegData>       |          |
+    -----------------------------------------------------------------------
+Unit <MultiCycleCpu> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 32x32-bit dual-port distributed RAM                   : 3
+# ROMs                                                 : 1
+ 4096x16-bit ROM                                       : 1
+# Multipliers                                          : 1
+ 6x7-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 8
+ 10-bit subtractor                                     : 2
+ 14-bit adder                                          : 1
+ 15-bit adder                                          : 2
+ 22-bit subtractor                                     : 1
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 16-bit up counter                                     : 2
+ 20-bit up counter                                     : 1
+ 5-bit up counter                                      : 2
+# Registers                                            : 308
+ Flip-Flops                                            : 308
+# Comparators                                          : 7
+ 10-bit comparator greatequal                          : 1
+ 10-bit comparator less                                : 1
+ 11-bit comparator greatequal                          : 1
+ 11-bit comparator less                                : 1
+ 16-bit comparator greatequal                          : 2
+ 22-bit comparator equal                               : 1
+# Multiplexers                                         : 34
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 4-to-1 multiplexer                              : 32
+ 32-bit 4-to-1 multiplexer                             : 1
+# Xors                                                 : 103
+ 1-bit xor2                                            : 17
+ 1-bit xor3                                            : 64
+ 1-bit xor4                                            : 21
+ 64-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <state_4> has a constant value of 0 in block <ControlUnit>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <13> in Unit <LPM_DFF_2> is equivalent to the following FF/Latch, which will be removed : <17> 
+WARNING:Xst:1710 - FF/Latch <num_count_18> (without init value) has a constant value of 0 in block <LCD_dis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <num_count_15> (without init value) has a constant value of 0 in block <LCD_dis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <num_count_1> (without init value) has a constant value of 0 in block <LCD_dis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <num_count_0> (without init value) has a constant value of 0 in block <LCD_dis>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <state_FSM_FFd46> in Unit <LCD_dis> is equivalent to the following FF/Latch, which will be removed : <num_count_19> 
+
+Optimizing unit <Top> ...
+
+Optimizing unit <ControlUnit> ...
+
+Optimizing unit <Memory> ...
+
+Optimizing unit <LCD_dis> ...
+
+Optimizing unit <pbdebounce> ...
+
+Optimizing unit <vga_dis> ...
+
+Optimizing unit <Adder16> ...
+
+Optimizing unit <MemoryManagerUnit> ...
+
+Optimizing unit <Adder64> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <MultiCycleCpu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 35.
+FlipFlop MMC/IR_0 has been replicated 1 time(s)
+FlipFlop MMC/cu/state_0 has been replicated 2 time(s)
+FlipFlop MMC/cu/state_1 has been replicated 2 time(s)
+FlipFlop MMC/cu/state_2 has been replicated 2 time(s)
+FlipFlop MMC/cu/state_3 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 393
+ Flip-Flops                                            : 393
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Top.ngr
+Top Level Output File Name         : Top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 18
+
+Cell Usage :
+# BELS                             : 3630
+#      GND                         : 3
+#      INV                         : 57
+#      LUT1                        : 69
+#      LUT2                        : 109
+#      LUT2_D                      : 9
+#      LUT2_L                      : 2
+#      LUT3                        : 521
+#      LUT3_D                      : 40
+#      LUT3_L                      : 17
+#      LUT4                        : 1738
+#      LUT4_D                      : 50
+#      LUT4_L                      : 28
+#      MUXCY                       : 174
+#      MUXF5                       : 536
+#      MUXF6                       : 114
+#      MUXF7                       : 18
+#      MUXF8                       : 3
+#      VCC                         : 3
+#      XORCY                       : 139
+# FlipFlops/Latches                : 405
+#      FD                          : 160
+#      FDC                         : 82
+#      FDCE                        : 10
+#      FDE                         : 106
+#      FDP                         : 12
+#      FDR                         : 33
+#      FDS                         : 2
+# RAMS                             : 212
+#      RAM16X1D                    : 192
+#      RAMB16_S2_S2                : 16
+#      RAMB16_S9_S9                : 4
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 17
+#      IBUF                        : 3
+#      OBUF                        : 14
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     1550  out of   4656    33%  
+ Number of Slice Flip Flops:            405  out of   9312     4%  
+ Number of 4 input LUTs:               3024  out of   9312    32%  
+    Number used as logic:              2640
+    Number used as RAMs:                384
+ Number of IOs:                          18
+ Number of bonded IOBs:                  18  out of    232     7%  
+ Number of BRAMs:                        20  out of     20   100%  
+ Number of MULT18X18SIOs:                 1  out of     20     5%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+pb2/pbreg                          | NONE(RegNum_1)         | 5     |
+lcd/state_change1                  | BUFG                   | 71    |
+clk_50M                            | BUFGP                  | 126   |
+pb2/m0/clk_1ms                     | NONE(pb2/pbshift_7)    | 9     |
+pb1/m0/clk_1ms                     | NONE(pb1/pbshift_7)    | 9     |
+pb1/pbreg1                         | BUFG                   | 397   |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------+--------------------------+-------+
+Control Signal                             | Buffer(FF name)          | Load  |
+-------------------------------------------+--------------------------+-------+
+MMC/MMU/vga/rst_n_inv(lcd_not00001_INV_0:O)| NONE(MMC/MMU/vga/hsync_r)| 104   |
+-------------------------------------------+--------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 19.489ns (Maximum Frequency: 51.312MHz)
+   Minimum input arrival time before clock: 4.105ns
+   Maximum output required time after clock: 22.919ns
+   Maximum combinational path delay: 5.310ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'pb2/pbreg'
+  Clock period: 3.373ns (frequency: 296.481MHz)
+  Total number of paths / destination ports: 19 / 5
+-------------------------------------------------------------------------
+Delay:               3.373ns (Levels of Logic = 2)
+  Source:            RegNum_2 (FF)
+  Destination:       RegNum_4 (FF)
+  Source Clock:      pb2/pbreg rising
+  Destination Clock: pb2/pbreg rising
+
+  Data Path: RegNum_2 to RegNum_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              69   0.591   1.449  RegNum_2 (RegNum_2)
+     LUT4:I0->O            1   0.704   0.000  Mcount_RegNum_xor<4>112 (Mcount_RegNum_xor<4>111)
+     MUXF5:I0->O           1   0.321   0.000  Mcount_RegNum_xor<4>11_f5 (Result<4>)
+     FD:D                      0.308          RegNum_4
+    ----------------------------------------
+    Total                      3.373ns (1.924ns logic, 1.449ns route)
+                                       (57.0% logic, 43.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'lcd/state_change1'
+  Clock period: 12.213ns (frequency: 81.878MHz)
+  Total number of paths / destination ports: 1954 / 75
+-------------------------------------------------------------------------
+Delay:               12.213ns (Levels of Logic = 9)
+  Source:            lcd/dis_count_1 (FF)
+  Destination:       lcd/lcd_d_0 (FF)
+  Source Clock:      lcd/state_change1 rising
+  Destination Clock: lcd/state_change1 rising
+
+  Data Path: lcd/dis_count_1 to lcd/lcd_d_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             29   0.591   1.436  lcd/dis_count_1 (lcd/dis_count_1)
+     LUT3:I0->O            8   0.704   0.792  lcd/hex<0>1111 (lcd/N23)
+     LUT4:I2->O            1   0.704   0.595  lcd/hex<2>203 (lcd/hex<2>203)
+     LUT3:I0->O            1   0.704   0.455  lcd/hex<2>205 (lcd/hex<2>205)
+     LUT4:I2->O            1   0.704   0.000  lcd/hex<2>363_G (N1218)
+     MUXF5:I1->O           1   0.321   0.595  lcd/hex<2>363 (lcd/hex<2>363)
+     LUT3:I0->O            4   0.704   0.591  lcd/hex<2>373 (lcd/hex<2>)
+     LUT4_D:I3->O          2   0.704   0.622  lcd/lcd_d_mux0000<1>17 (lcd/N13)
+     LUT4_L:I0->LO         1   0.704   0.275  lcd/lcd_d_mux0000<3>78_SW0 (N1055)
+     LUT4:I0->O            1   0.704   0.000  lcd/lcd_d_mux0000<3>78 (lcd/lcd_d_mux0000<3>)
+     FDE:D                     0.308          lcd/lcd_d_0
+    ----------------------------------------
+    Total                     12.213ns (6.852ns logic, 5.361ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_50M'
+  Clock period: 14.300ns (frequency: 69.930MHz)
+  Total number of paths / destination ports: 138569 / 374
+-------------------------------------------------------------------------
+Delay:               14.300ns (Levels of Logic = 17)
+  Source:            MMC/MMU/vga/y_cnt_0 (FF)
+  Destination:       MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp2x2.ram (RAM)
+  Source Clock:      clk_50M rising
+  Destination Clock: clk_50M rising
+
+  Data Path: MMC/MMU/vga/y_cnt_0 to MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp2x2.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.591   0.844  MMC/MMU/vga/y_cnt_0 (MMC/MMU/vga/y_cnt_0)
+     LUT1:I0->O            1   0.704   0.000  MMC/MMU/vga/Msub_ypos_cy<0>_rt (MMC/MMU/vga/Msub_ypos_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  MMC/MMU/vga/Msub_ypos_cy<0> (MMC/MMU/vga/Msub_ypos_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<1> (MMC/MMU/vga/Msub_ypos_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<2> (MMC/MMU/vga/Msub_ypos_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<3> (MMC/MMU/vga/Msub_ypos_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<4> (MMC/MMU/vga/Msub_ypos_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<5> (MMC/MMU/vga/Msub_ypos_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<6> (MMC/MMU/vga/Msub_ypos_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<7> (MMC/MMU/vga/Msub_ypos_cy<7>)
+     MUXCY:CI->O           0   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<8> (MMC/MMU/vga/Msub_ypos_cy<8>)
+     XORCY:CI->O           2   0.804   0.447  MMC/MMU/vga/Msub_ypos_xor<9> (MMC/MMU/ypos<9>)
+     MULT18X18SIO:A5->P10    4   4.602   0.762  MMC/MMU/Mmult_lineBase_mult0000 (MMC/MMU/lineBase<10>)
+     LUT1:I0->O            1   0.704   0.000  MMC/MMU/Madd_offset_share0000_cy<10>_rt (MMC/MMU/Madd_offset_share0000_cy<10>_rt)
+     MUXCY:S->O            0   0.464   0.000  MMC/MMU/Madd_offset_share0000_cy<10> (MMC/MMU/Madd_offset_share0000_cy<10>)
+     XORCY:CI->O           1   0.804   0.455  MMC/MMU/Madd_offset_share0000_xor<11> (MMC/MMU/offset_share0000<11>)
+     LUT4:I2->O           20   0.704   1.102  MMC/MMU/Madd_ZBadr_xor<11>154 (MMC/MMU/ZBadr<11>)
+     begin scope: 'MMC/MMU/Mem/banka'
+     RAMB16_S2_S2:ADDRB10        0.377          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp2x2.ram
+    ----------------------------------------
+    Total                     14.300ns (10.690ns logic, 3.610ns route)
+                                       (74.8% logic, 25.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'pb2/m0/clk_1ms'
+  Clock period: 4.631ns (frequency: 215.936MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.631ns (Levels of Logic = 2)
+  Source:            pb2/pbshift_3 (FF)
+  Destination:       pb2/pbreg (FF)
+  Source Clock:      pb2/m0/clk_1ms rising
+  Destination Clock: pb2/m0/clk_1ms rising
+
+  Data Path: pb2/pbshift_3 to pb2/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  pb2/pbshift_3 (pb2/pbshift_3)
+     LUT4:I0->O            1   0.704   0.595  pb2/pbreg_mux000029 (pb2/pbreg_mux000029)
+     LUT2:I0->O            1   0.704   0.420  pb2/pbreg_mux000035 (pb2/pbreg_mux000035)
+     FDS:S                     0.911          pb2/pbreg
+    ----------------------------------------
+    Total                      4.631ns (2.910ns logic, 1.721ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'pb1/m0/clk_1ms'
+  Clock period: 4.631ns (frequency: 215.936MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.631ns (Levels of Logic = 2)
+  Source:            pb1/pbshift_3 (FF)
+  Destination:       pb1/pbreg (FF)
+  Source Clock:      pb1/m0/clk_1ms rising
+  Destination Clock: pb1/m0/clk_1ms rising
+
+  Data Path: pb1/pbshift_3 to pb1/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  pb1/pbshift_3 (pb1/pbshift_3)
+     LUT4:I0->O            1   0.704   0.595  pb1/pbreg_mux000029 (pb1/pbreg_mux000029)
+     LUT2:I0->O            1   0.704   0.420  pb1/pbreg_mux000035 (pb1/pbreg_mux000035)
+     FDS:S                     0.911          pb1/pbreg
+    ----------------------------------------
+    Total                      4.631ns (2.910ns logic, 1.721ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'pb1/pbreg1'
+  Clock period: 19.489ns (frequency: 51.312MHz)
+  Total number of paths / destination ports: 5556536 / 1934
+-------------------------------------------------------------------------
+Delay:               19.489ns (Levels of Logic = 14)
+  Source:            MMC/cu/state_0_1 (FF)
+  Destination:       MMC/PC_31 (FF)
+  Source Clock:      pb1/pbreg1 rising
+  Destination Clock: pb1/pbreg1 rising
+
+  Data Path: MMC/cu/state_0_1 to MMC/PC_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  MMC/cu/state_0_1 (MMC/cu/state_0_1)
+     LUT4_D:I0->LO         1   0.704   0.135  MMC/cu/state61 (N1420)
+     LUT3:I2->O            3   0.704   0.535  MMC/alu/aluControl/operation<2>21 (MMC/alu/N331)
+     LUT4:I3->O           26   0.704   1.295  MMC/alu/aluControl/operation<2>_1 (MMC/alu/aluControl/operation<2>)
+     LUT3_L:I2->LO         1   0.704   0.104  MMC/alu/adder64/Adder/a1/pgtoPG/bp_1_and00001 (MMC/alu/adder64/Adder/a1/pgtoPG/bp_1_and00001)
+     LUT4:I3->O            1   0.704   0.424  MMC/alu/adder64/Adder/a1/pgtoPG/bp_1_and000011_SW0 (N494)
+     LUT4_D:I3->O          4   0.704   0.666  MMC/alu/adder64/Adder/a1/pgtoPG/bp_1_and000011 (MMC/alu/adder64/Adder/p_rnm0<1>)
+     LUT3:I1->O            1   0.704   0.424  MMC/alu/adder64/Adder/PC/C_1_or000050 (MMC/alu/adder64/Adder/PC/C_1_or000050)
+     LUT4:I3->O           17   0.704   1.055  MMC/alu/adder64/Adder/PC/C_1_or000056 (MMC/alu/adder64/Adder/PC/C_1_or000056)
+     LUT4:I3->O            9   0.704   0.824  MMC/alu/adder64/Adder/PC/C_2_or000084 (MMC/alu/adder64/Adder/C<2>)
+     LUT4_L:I3->LO         1   0.704   0.104  MMC/PC_or00001068 (MMC/PC_or00001068)
+     LUT4:I3->O            1   0.704   0.424  MMC/PC_or00001287 (MMC/PC_or00001287)
+     LUT4:I3->O            1   0.704   0.424  MMC/PC_or00002176_SW0_SW0 (N595)
+     LUT4_L:I3->LO         1   0.704   0.104  MMC/PC_or00002202_SW0 (N500)
+     LUT4:I3->O           32   0.704   1.262  MMC/PC_or00002228 (MMC/PC_or0000)
+     FDE:CE                    0.555          MMC/PC_0
+    ----------------------------------------
+    Total                     19.489ns (11.002ns logic, 8.487ns route)
+                                       (56.5% logic, 43.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'lcd/state_change1'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              4.105ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       lcd/dis_count_4 (FF)
+  Destination Clock: lcd/state_change1 rising
+
+  Data Path: rst_n to lcd/dis_count_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   1.218   0.995  rst_n_IBUF (lcd/reset_inv)
+     LUT2:I0->O            5   0.704   0.633  lcd/dis_count_and00001 (lcd/dis_count_and0000)
+     FDE:CE                    0.555          lcd/dis_count_0
+    ----------------------------------------
+    Total                      4.105ns (2.477ns logic, 1.628ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'pb2/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            RegNumPlus (PAD)
+  Destination:       pb2/pbshift_0 (FF)
+  Destination Clock: pb2/m0/clk_1ms rising
+
+  Data Path: RegNumPlus to pb2/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  RegNumPlus_IBUF (RegNumPlus_IBUF)
+     FD:D                      0.308          pb2/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'pb1/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            btn (PAD)
+  Destination:       pb1/pbshift_0 (FF)
+  Destination Clock: pb1/m0/clk_1ms rising
+
+  Data Path: btn to pb1/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  btn_IBUF (btn_IBUF)
+     FD:D                      0.308          pb1/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'lcd/state_change1'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            lcd/lcd_e (FF)
+  Destination:       lcd_e (PAD)
+  Source Clock:      lcd/state_change1 rising
+
+  Data Path: lcd/lcd_e to lcd_e
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.591   0.447  lcd/lcd_e (lcd/lcd_e)
+     OBUF:I->O                 3.272          lcd_e_OBUF (lcd_e)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_50M'
+  Total number of paths / destination ports: 108806 / 5
+-------------------------------------------------------------------------
+Offset:              22.919ns (Levels of Logic = 20)
+  Source:            MMC/MMU/vga/y_cnt_0 (FF)
+  Destination:       vga_b (PAD)
+  Source Clock:      clk_50M rising
+
+  Data Path: MMC/MMU/vga/y_cnt_0 to vga_b
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.591   0.844  MMC/MMU/vga/y_cnt_0 (MMC/MMU/vga/y_cnt_0)
+     LUT1:I0->O            1   0.704   0.000  MMC/MMU/vga/Msub_ypos_cy<0>_rt (MMC/MMU/vga/Msub_ypos_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  MMC/MMU/vga/Msub_ypos_cy<0> (MMC/MMU/vga/Msub_ypos_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<1> (MMC/MMU/vga/Msub_ypos_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  MMC/MMU/vga/Msub_ypos_cy<2> (MMC/MMU/vga/Msub_ypos_cy<2>)
+     XORCY:CI->O         274   0.804   1.418  MMC/MMU/vga/Msub_ypos_xor<3> (MMC/MMU/ypos<3>)
+     LUT4:I1->O           28   0.704   1.265  MMC/MMU/vga/ziku/Mrom_douta1921 (MMC/MMU/vga/ziku/Mrom_douta192)
+     LUT4:I3->O            1   0.704   0.499  MMC/MMU/vga/Mmux_white_3412_SW0 (N709)
+     LUT3:I1->O            1   0.704   0.499  MMC/MMU/vga/Mmux_white_3412 (MMC/MMU/vga/Mmux_white_3038)
+     LUT4:I1->O            2   0.704   0.451  MMC/MMU/vga/Mmux_white_32_f5_51 (MMC/MMU/vga/Mmux_white_28_f518)
+     LUT4:I3->O            1   0.704   0.455  MMC/MMU/vga/adr<4>1313 (MMC/MMU/vga/adr<4>1313)
+     LUT4:I2->O            1   0.704   0.499  MMC/MMU/vga/adr<4>1339 (MMC/MMU/vga/adr<4>14)
+     LUT4:I1->O            1   0.704   0.000  MMC/MMU/vga/Mmux_white_191 (MMC/MMU/vga/Mmux_white_19)
+     MUXF5:I0->O           1   0.321   0.499  MMC/MMU/vga/Mmux_white_17_f5 (MMC/MMU/vga/Mmux_white_17_f5)
+     LUT4:I1->O            1   0.704   0.455  MMC/MMU/vga/Mmux_white_11_SW0 (N917)
+     LUT3:I2->O            1   0.704   0.000  MMC/MMU/vga/Mmux_white_9_f5_G (N1280)
+     MUXF5:I1->O           1   0.321   0.420  MMC/MMU/vga/Mmux_white_9_f5 (MMC/MMU/vga/Mmux_white_9_f5)
+     INV:I->O              1   0.704   0.000  MMC/MMU/vga/vga_g169_SW02_INV_0 (MMC/MMU/vga/vga_g169_SW01)
+     MUXF5:I0->O           1   0.321   0.424  MMC/MMU/vga/vga_g169_SW0_f5 (N729)
+     LUT4:I3->O            3   0.704   0.531  MMC/MMU/vga/vga_g180 (vga_b_OBUF)
+     OBUF:I->O                 3.272          vga_b_OBUF (vga_b)
+    ----------------------------------------
+    Total                     22.919ns (14.660ns logic, 8.259ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               5.310ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       led (PAD)
+
+  Data Path: rst_n to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   1.218   0.820  rst_n_IBUF (lcd/reset_inv)
+     OBUF:I->O                 3.272          led_OBUF (led)
+    ----------------------------------------
+    Total                      5.310ns (4.490ns logic, 0.820ns route)
+                                       (84.6% logic, 15.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 40.00 secs
+Total CPU time to Xst completion: 39.19 secs
+ 
+--> 
+
+Total memory usage is 379132 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   41 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

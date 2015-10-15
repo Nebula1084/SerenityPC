@@ -1,0 +1,1068 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.53 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.53 secs
+ 
+--> Reading design: NumIn.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "NumIn.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "NumIn"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : NumIn
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "NumIn.v" in library work
+Module <NumIn> compiled
+Module <pbdebounce> compiled
+Module <timer_1ms> compiled
+No errors in compilation
+Analysis of file <"NumIn.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <NumIn> in library <work>.
+
+Analyzing hierarchy for module <pbdebounce> in library <work>.
+
+Analyzing hierarchy for module <timer_1ms> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <NumIn>.
+Module <NumIn> is correct for synthesis.
+ 
+Analyzing module <pbdebounce> in library <work>.
+Module <pbdebounce> is correct for synthesis.
+ 
+Analyzing module <timer_1ms> in library <work>.
+Module <timer_1ms> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <timer_1ms>.
+    Related source file is "NumIn.v".
+    Found 1-bit register for signal <clk_1ms>.
+    Found 16-bit up counter for signal <cnt>.
+    Found 16-bit comparator greatequal for signal <cnt$cmp_ge0000> created at line 74.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <timer_1ms> synthesized.
+
+
+Synthesizing Unit <pbdebounce>.
+    Related source file is "NumIn.v".
+    Found 1-bit register for signal <pbreg>.
+    Found 8-bit register for signal <pbshift>.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+Unit <pbdebounce> synthesized.
+
+
+Synthesizing Unit <NumIn>.
+    Related source file is "NumIn.v".
+    Found 32-bit register for signal <number>.
+    Found 4-bit adder for signal <$add0000> created at line 36.
+    Found 4-bit adder for signal <$add0001> created at line 37.
+    Found 4-bit adder for signal <$add0002> created at line 38.
+    Found 4-bit adder for signal <$add0003> created at line 39.
+    Found 4-bit adder for signal <$add0004> created at line 40.
+    Found 4-bit adder for signal <$add0005> created at line 41.
+    Found 4-bit adder for signal <$add0006> created at line 42.
+    Found 4-bit adder for signal <$add0007> created at line 43.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+Unit <NumIn> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 4-bit adder                                           : 8
+# Counters                                             : 8
+ 16-bit up counter                                     : 8
+# Registers                                            : 112
+ 1-bit register                                        : 112
+# Comparators                                          : 8
+ 16-bit comparator greatequal                          : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 4-bit adder                                           : 8
+# Counters                                             : 8
+ 16-bit up counter                                     : 8
+# Registers                                            : 112
+ Flip-Flops                                            : 112
+# Comparators                                          : 8
+ 16-bit comparator greatequal                          : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <NumIn> ...
+
+Optimizing unit <pbdebounce> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block NumIn, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 240
+ Flip-Flops                                            : 240
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : NumIn.ngr
+Top Level Output File Name         : NumIn
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 41
+
+Cell Usage :
+# BELS                             : 586
+#      GND                         : 1
+#      INV                         : 40
+#      LUT1                        : 136
+#      LUT2                        : 32
+#      LUT3                        : 16
+#      LUT4                        : 32
+#      LUT4_L                      : 16
+#      MUXCY                       : 184
+#      VCC                         : 1
+#      XORCY                       : 128
+# FlipFlops/Latches                : 240
+#      FD                          : 88
+#      FDE                         : 8
+#      FDR                         : 136
+#      FDS                         : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 40
+#      IBUF                        : 8
+#      OBUF                        : 32
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      172  out of   4656     3%  
+ Number of Slice Flip Flops:            240  out of   9312     2%  
+ Number of 4 input LUTs:                272  out of   9312     2%  
+ Number of IOs:                          41
+ Number of bonded IOBs:                  41  out of    232    17%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+p0/pbreg                           | NONE(number_2)         | 4     |
+p1/pbreg                           | NONE(number_5)         | 4     |
+p2/pbreg                           | NONE(number_10)        | 4     |
+p3/pbreg                           | NONE(number_14)        | 4     |
+p4/pbreg                           | NONE(number_17)        | 4     |
+p5/pbreg                           | NONE(number_22)        | 4     |
+p6/pbreg                           | NONE(number_26)        | 4     |
+p7/pbreg                           | NONE(number_29)        | 4     |
+clk                                | BUFGP                  | 136   |
+p7/m0/clk_1ms                      | NONE(p7/pbshift_7)     | 9     |
+p6/m0/clk_1ms                      | NONE(p6/pbshift_7)     | 9     |
+p5/m0/clk_1ms                      | NONE(p5/pbshift_7)     | 9     |
+p4/m0/clk_1ms                      | NONE(p4/pbshift_7)     | 9     |
+p3/m0/clk_1ms                      | NONE(p3/pbshift_7)     | 9     |
+p2/m0/clk_1ms                      | NONE(p2/pbshift_7)     | 9     |
+p1/m0/clk_1ms                      | NONE(p1/pbshift_7)     | 9     |
+p0/m0/clk_1ms                      | NONE(p0/pbshift_7)     | 9     |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.028ns (Maximum Frequency: 198.886MHz)
+   Minimum input arrival time before clock: 1.946ns
+   Maximum output required time after clock: 4.496ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p0/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_0 (FF)
+  Destination:       number_2 (FF)
+  Source Clock:      p0/pbreg rising
+  Destination Clock: p0/pbreg rising
+
+  Data Path: number_0 to number_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_0 (number_0)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0000_xor<2>11 (_add0000<2>)
+     FD:D                      0.308          number_2
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p1/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_4 (FF)
+  Destination:       number_6 (FF)
+  Source Clock:      p1/pbreg rising
+  Destination Clock: p1/pbreg rising
+
+  Data Path: number_4 to number_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_4 (number_4)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0001_xor<2>11 (_add0001<2>)
+     FD:D                      0.308          number_6
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p2/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_8 (FF)
+  Destination:       number_10 (FF)
+  Source Clock:      p2/pbreg rising
+  Destination Clock: p2/pbreg rising
+
+  Data Path: number_8 to number_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_8 (number_8)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0002_xor<2>11 (_add0002<2>)
+     FD:D                      0.308          number_10
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p3/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_12 (FF)
+  Destination:       number_14 (FF)
+  Source Clock:      p3/pbreg rising
+  Destination Clock: p3/pbreg rising
+
+  Data Path: number_12 to number_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_12 (number_12)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0003_xor<2>11 (_add0003<2>)
+     FD:D                      0.308          number_14
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p4/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_16 (FF)
+  Destination:       number_18 (FF)
+  Source Clock:      p4/pbreg rising
+  Destination Clock: p4/pbreg rising
+
+  Data Path: number_16 to number_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_16 (number_16)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0004_xor<2>11 (_add0004<2>)
+     FD:D                      0.308          number_18
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p5/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_20 (FF)
+  Destination:       number_22 (FF)
+  Source Clock:      p5/pbreg rising
+  Destination Clock: p5/pbreg rising
+
+  Data Path: number_20 to number_22
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_20 (number_20)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0005_xor<2>11 (_add0005<2>)
+     FD:D                      0.308          number_22
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p6/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_24 (FF)
+  Destination:       number_26 (FF)
+  Source Clock:      p6/pbreg rising
+  Destination Clock: p6/pbreg rising
+
+  Data Path: number_24 to number_26
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_24 (number_24)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0006_xor<2>11 (_add0006<2>)
+     FD:D                      0.308          number_26
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p7/pbreg'
+  Clock period: 2.411ns (frequency: 414.766MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.411ns (Levels of Logic = 1)
+  Source:            number_28 (FF)
+  Destination:       number_30 (FF)
+  Source Clock:      p7/pbreg rising
+  Destination Clock: p7/pbreg rising
+
+  Data Path: number_28 to number_30
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.808  number_28 (number_28)
+     LUT3:I0->O            1   0.704   0.000  Madd__add0007_xor<2>11 (_add0007<2>)
+     FD:D                      0.308          number_30
+    ----------------------------------------
+    Total                      2.411ns (1.603ns logic, 0.808ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.028ns (frequency: 198.886MHz)
+  Total number of paths / destination ports: 2864 / 272
+-------------------------------------------------------------------------
+Delay:               5.028ns (Levels of Logic = 9)
+  Source:            p7/m0/cnt_3 (FF)
+  Destination:       p7/m0/cnt_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: p7/m0/cnt_3 to p7/m0/cnt_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.622  p7/m0/cnt_3 (p7/m0/cnt_3)
+     LUT1:I0->O            1   0.704   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<0>_rt (p7/m0/Mcompar_cnt_cmp_ge0000_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<0> (p7/m0/Mcompar_cnt_cmp_ge0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<1> (p7/m0/Mcompar_cnt_cmp_ge0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<2> (p7/m0/Mcompar_cnt_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<3> (p7/m0/Mcompar_cnt_cmp_ge0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<4> (p7/m0/Mcompar_cnt_cmp_ge0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<5> (p7/m0/Mcompar_cnt_cmp_ge0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  p7/m0/Mcompar_cnt_cmp_ge0000_cy<6> (p7/m0/Mcompar_cnt_cmp_ge0000_cy<6>)
+     MUXCY:CI->O          17   0.331   1.051  p7/m0/Mcompar_cnt_cmp_ge0000_cy<7> (p7/m0/cnt_cmp_ge0000)
+     FDR:R                     0.911          p7/m0/cnt_0
+    ----------------------------------------
+    Total                      5.028ns (3.355ns logic, 1.673ns route)
+                                       (66.7% logic, 33.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p7/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p7/pbshift_0 (FF)
+  Destination:       p7/pbreg (FF)
+  Source Clock:      p7/m0/clk_1ms rising
+  Destination Clock: p7/m0/clk_1ms rising
+
+  Data Path: p7/pbshift_0 to p7/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p7/pbshift_0 (p7/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p7/pbreg_mux000029 (p7/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p7/pbreg_mux000035 (p7/pbreg_mux000035)
+     FDS:S                     0.911          p7/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p6/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p6/pbshift_0 (FF)
+  Destination:       p6/pbreg (FF)
+  Source Clock:      p6/m0/clk_1ms rising
+  Destination Clock: p6/m0/clk_1ms rising
+
+  Data Path: p6/pbshift_0 to p6/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p6/pbshift_0 (p6/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p6/pbreg_mux000029 (p6/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p6/pbreg_mux000035 (p6/pbreg_mux000035)
+     FDS:S                     0.911          p6/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p5/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p5/pbshift_0 (FF)
+  Destination:       p5/pbreg (FF)
+  Source Clock:      p5/m0/clk_1ms rising
+  Destination Clock: p5/m0/clk_1ms rising
+
+  Data Path: p5/pbshift_0 to p5/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p5/pbshift_0 (p5/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p5/pbreg_mux000029 (p5/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p5/pbreg_mux000035 (p5/pbreg_mux000035)
+     FDS:S                     0.911          p5/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p4/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p4/pbshift_0 (FF)
+  Destination:       p4/pbreg (FF)
+  Source Clock:      p4/m0/clk_1ms rising
+  Destination Clock: p4/m0/clk_1ms rising
+
+  Data Path: p4/pbshift_0 to p4/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p4/pbshift_0 (p4/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p4/pbreg_mux000029 (p4/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p4/pbreg_mux000035 (p4/pbreg_mux000035)
+     FDS:S                     0.911          p4/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p3/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p3/pbshift_0 (FF)
+  Destination:       p3/pbreg (FF)
+  Source Clock:      p3/m0/clk_1ms rising
+  Destination Clock: p3/m0/clk_1ms rising
+
+  Data Path: p3/pbshift_0 to p3/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p3/pbshift_0 (p3/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p3/pbreg_mux000029 (p3/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p3/pbreg_mux000035 (p3/pbreg_mux000035)
+     FDS:S                     0.911          p3/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p2/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p2/pbshift_0 (FF)
+  Destination:       p2/pbreg (FF)
+  Source Clock:      p2/m0/clk_1ms rising
+  Destination Clock: p2/m0/clk_1ms rising
+
+  Data Path: p2/pbshift_0 to p2/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p2/pbshift_0 (p2/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p2/pbreg_mux000029 (p2/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p2/pbreg_mux000035 (p2/pbreg_mux000035)
+     FDS:S                     0.911          p2/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p1/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p1/pbshift_0 (FF)
+  Destination:       p1/pbreg (FF)
+  Source Clock:      p1/m0/clk_1ms rising
+  Destination Clock: p1/m0/clk_1ms rising
+
+  Data Path: p1/pbshift_0 to p1/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p1/pbshift_0 (p1/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p1/pbreg_mux000029 (p1/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p1/pbreg_mux000035 (p1/pbreg_mux000035)
+     FDS:S                     0.911          p1/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'p0/m0/clk_1ms'
+  Clock period: 4.535ns (frequency: 220.507MHz)
+  Total number of paths / destination ports: 24 / 9
+-------------------------------------------------------------------------
+Delay:               4.535ns (Levels of Logic = 2)
+  Source:            p0/pbshift_0 (FF)
+  Destination:       p0/pbreg (FF)
+  Source Clock:      p0/m0/clk_1ms rising
+  Destination Clock: p0/m0/clk_1ms rising
+
+  Data Path: p0/pbshift_0 to p0/pbreg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  p0/pbshift_0 (p0/pbshift_0)
+     LUT4:I0->O            1   0.704   0.499  p0/pbreg_mux000029 (p0/pbreg_mux000029)
+     LUT2:I1->O            1   0.704   0.420  p0/pbreg_mux000035 (p0/pbreg_mux000035)
+     FDS:S                     0.911          p0/pbreg
+    ----------------------------------------
+    Total                      4.535ns (2.910ns logic, 1.625ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p7/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<7> (PAD)
+  Destination:       p7/pbshift_0 (FF)
+  Destination Clock: p7/m0/clk_1ms rising
+
+  Data Path: addFlag<7> to p7/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_7_IBUF (addFlag_7_IBUF)
+     FD:D                      0.308          p7/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p6/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<6> (PAD)
+  Destination:       p6/pbshift_0 (FF)
+  Destination Clock: p6/m0/clk_1ms rising
+
+  Data Path: addFlag<6> to p6/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_6_IBUF (addFlag_6_IBUF)
+     FD:D                      0.308          p6/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p5/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<5> (PAD)
+  Destination:       p5/pbshift_0 (FF)
+  Destination Clock: p5/m0/clk_1ms rising
+
+  Data Path: addFlag<5> to p5/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_5_IBUF (addFlag_5_IBUF)
+     FD:D                      0.308          p5/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p4/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<4> (PAD)
+  Destination:       p4/pbshift_0 (FF)
+  Destination Clock: p4/m0/clk_1ms rising
+
+  Data Path: addFlag<4> to p4/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_4_IBUF (addFlag_4_IBUF)
+     FD:D                      0.308          p4/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p3/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<3> (PAD)
+  Destination:       p3/pbshift_0 (FF)
+  Destination Clock: p3/m0/clk_1ms rising
+
+  Data Path: addFlag<3> to p3/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_3_IBUF (addFlag_3_IBUF)
+     FD:D                      0.308          p3/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p2/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<2> (PAD)
+  Destination:       p2/pbshift_0 (FF)
+  Destination Clock: p2/m0/clk_1ms rising
+
+  Data Path: addFlag<2> to p2/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_2_IBUF (addFlag_2_IBUF)
+     FD:D                      0.308          p2/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p1/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<1> (PAD)
+  Destination:       p1/pbshift_0 (FF)
+  Destination Clock: p1/m0/clk_1ms rising
+
+  Data Path: addFlag<1> to p1/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_1_IBUF (addFlag_1_IBUF)
+     FD:D                      0.308          p1/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'p0/m0/clk_1ms'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            addFlag<0> (PAD)
+  Destination:       p0/pbshift_0 (FF)
+  Destination Clock: p0/m0/clk_1ms rising
+
+  Data Path: addFlag<0> to p0/pbshift_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  addFlag_0_IBUF (addFlag_0_IBUF)
+     FD:D                      0.308          p0/pbshift_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p7/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_28 (FF)
+  Destination:       number<28> (PAD)
+  Source Clock:      p7/pbreg rising
+
+  Data Path: number_28 to number<28>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_28 (number_28)
+     OBUF:I->O                 3.272          number_28_OBUF (number<28>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p6/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_24 (FF)
+  Destination:       number<24> (PAD)
+  Source Clock:      p6/pbreg rising
+
+  Data Path: number_24 to number<24>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_24 (number_24)
+     OBUF:I->O                 3.272          number_24_OBUF (number<24>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p5/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_20 (FF)
+  Destination:       number<20> (PAD)
+  Source Clock:      p5/pbreg rising
+
+  Data Path: number_20 to number<20>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_20 (number_20)
+     OBUF:I->O                 3.272          number_20_OBUF (number<20>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p4/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_16 (FF)
+  Destination:       number<16> (PAD)
+  Source Clock:      p4/pbreg rising
+
+  Data Path: number_16 to number<16>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_16 (number_16)
+     OBUF:I->O                 3.272          number_16_OBUF (number<16>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p3/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_12 (FF)
+  Destination:       number<12> (PAD)
+  Source Clock:      p3/pbreg rising
+
+  Data Path: number_12 to number<12>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_12 (number_12)
+     OBUF:I->O                 3.272          number_12_OBUF (number<12>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p2/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_8 (FF)
+  Destination:       number<8> (PAD)
+  Source Clock:      p2/pbreg rising
+
+  Data Path: number_8 to number<8>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_8 (number_8)
+     OBUF:I->O                 3.272          number_8_OBUF (number<8>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p1/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_4 (FF)
+  Destination:       number<4> (PAD)
+  Source Clock:      p1/pbreg rising
+
+  Data Path: number_4 to number<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_4 (number_4)
+     OBUF:I->O                 3.272          number_4_OBUF (number<4>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'p0/pbreg'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            number_0 (FF)
+  Destination:       number<0> (PAD)
+  Source Clock:      p0/pbreg rising
+
+  Data Path: number_0 to number<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.633  number_0 (number_0)
+     OBUF:I->O                 3.272          number_0_OBUF (number<0>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.57 secs
+ 
+--> 
+
+Total memory usage is 248500 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

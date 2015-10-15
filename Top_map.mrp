@@ -1,0 +1,409 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Mapping Report File for Design 'Top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off
+-c 100 -o Top_map.ncd Top.ngd Top.pcf 
+Target Device  : xc3s500e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Wed Oct 14 20:01:11 2015
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   22
+Logic Utilization:
+  Number of Slice Flip Flops:           399 out of   9,312    4%
+  Number of 4 input LUTs:             2,940 out of   9,312   31%
+Logic Distribution:
+  Number of occupied Slices:          1,728 out of   4,656   37%
+    Number of Slices containing only related logic:   1,728 out of   1,728 100%
+    Number of Slices containing unrelated logic:          0 out of   1,728   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       3,033 out of   9,312   32%
+    Number used as logic:             2,556
+    Number used as a route-thru:         93
+    Number used for Dual Port RAMs:     384
+      (Two LUTs used per Dual Port RAM)
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 18 out of     232    7%
+  Number of RAMB16s:                     20 out of      20  100%
+  Number of BUFGMUXs:                     3 out of      24   12%
+  Number of MULT18X18SIOs:                1 out of      20    5%
+
+Average Fanout of Non-Clock Nets:                4.61
+
+Peak Memory Usage:  287 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   3 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Pack:249 - The following adjacent carry multiplexers occupy different
+   slice components.  The resulting carry chain will have suboptimal timing.
+   	lcd/Mcompar_delay_count_cmp_eq0000_cy<10>
+   	lcd/Mcount_delay_count_cy<0>
+WARNING:Pack:266 - The function generator MMC/MMU/vga/ziku/Mrom_douta3881 failed
+   to merge with F5 multiplexer MMC/MMU/vga/Mmux_white_3159_f5.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_241 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_23_f5_5.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_2935 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_24_f5_7.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/adr<0>1 failed to merge
+   with F5 multiplexer MMC/MMU/vga/adr<0>451_f5.  There is a conflict for the
+   FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_2825 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_30_f5_10.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_3215 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_30_f5_20.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_3320 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_30_f5_21.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_2822 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_30_f5_29.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_3217 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_31_f5_22.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_3321 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_31_f5_16.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_209 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_25_f5_23.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_333 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_26_f5_22.  There is a
+   conflict for the GYMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_288 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_26_f5_24.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_325 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_27_f5_32.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_3119 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_27_f5_28.  There is a
+   conflict for the GYMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_361 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_29_f5_17.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_342 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_29_f5_19.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_3064 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_29_f5_28.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_2413 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_29_f5_37.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MMC/MMU/vga/Mmux_white_359 failed to
+   merge with F5 multiplexer MMC/MMU/vga/Mmux_white_2222_SW0_SW0_f5.  There is
+   more than one F5MUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator lcd/lcd_e_mux0000233 failed to merge
+   with F5 multiplexer lcd/lcd_e_mux0000_f5.  There is a conflict for the FXMUX.
+    The design will exhibit suboptimal timing.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network MMC/regFile/Mram_regs63/SPO has no load.
+INFO:LIT:395 - The above info message is repeated 191 more times for the
+   following (max. 5 shown):
+   MMC/regFile/Mram_regs62/SPO,
+   MMC/regFile/Mram_regs64/SPO,
+   MMC/regFile/Mram_regs61/SPO,
+   MMC/regFile/Mram_regs60/SPO,
+   MMC/regFile/Mram_regs58/SPO
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  18 block(s) optimized away
+  34 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "MMC/MMU/Mem/bankb/N0" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<0>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<2>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<3>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<4>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<5>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<6>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<7>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<1>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<2>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<3>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<4>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<5>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<6>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<7>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<0>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<1>" is sourceless and has been removed.
+The signal "MMC/MMU/Mem/banka/N0" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<0>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<2>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<3>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<4>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<5>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<6>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<7>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<1>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<2>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<3>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<4>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<5>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<6>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[1].ram.ram_doutb<7>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<0>" is sourceless and has been removed.
+The signal
+"MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.
+cstr/ramloop[6].ram.ram_doutb<1>" is sourceless and has been removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+LUT3
+		MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/bindec_b.bindec_inst_b/ADDR[2]_PWR_16_o_equal_5_o<2>1
+   optimized to 0
+LUT3
+		MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/Mmux_dout_mux171
+   optimized to 0
+FDE
+		MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/sel_pipe_0
+   optimized to 0
+FDE
+		MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/sel_pipe_1
+   optimized to 0
+FDE
+		MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/sel_pipe_2
+   optimized to 0
+INV
+		MMC/MMU/Mem/banka/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/out31_INV_0
+GND 		MMC/MMU/Mem/banka/XST_GND
+VCC 		MMC/MMU/Mem/banka/XST_VCC
+LUT3
+		MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/bindec_b.bindec_inst_b/ADDR[2]_PWR_16_o_equal_5_o<2>1
+   optimized to 0
+LUT3
+		MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/Mmux_dout_mux171
+   optimized to 0
+FDE
+		MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/sel_pipe_0
+   optimized to 0
+FDE
+		MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/sel_pipe_1
+   optimized to 0
+FDE
+		MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/has_mux_b.B/sel_pipe_2
+   optimized to 0
+INV
+		MMC/MMU/Mem/bankb/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid
+.cstr/out31_INV_0
+GND 		MMC/MMU/Mem/bankb/XST_GND
+VCC 		MMC/MMU/Mem/bankb/XST_VCC
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RegNumPlus                         | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| btn                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| clk_50M                            | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| flash_ce                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| hsync                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| lcd_d<0>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| lcd_d<1>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| lcd_d<2>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| lcd_d<3>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| lcd_e                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| lcd_rs                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| lcd_rw                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| led                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rst_n                              | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| vga_b                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| vga_g                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| vga_r                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| vsync                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

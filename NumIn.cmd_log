@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "E:/Education/My Resource/AaI/SerenityPC/NumIn.xst" -ofn "E:/Education/My Resource/AaI/SerenityPC/NumIn.syr" 

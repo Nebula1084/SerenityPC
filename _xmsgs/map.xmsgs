@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MMC/regFile/Mram_regs63/SPO</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">191</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">MMC/regFile/Mram_regs62/SPO,
+MMC/regFile/Mram_regs64/SPO,
+MMC/regFile/Mram_regs61/SPO,
+MMC/regFile/Mram_regs60/SPO,
+MMC/regFile/Mram_regs58/SPO</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="warning" file="Pack" num="249" delta="old" >The following adjacent carry multiplexers occupy different slice components.  The resulting carry chain will have suboptimal timing.
+	<arg fmt="%s" index="1">lcd/Mcompar_delay_count_cmp_eq0000_cy&lt;10&gt;</arg>
+	<arg fmt="%s" index="2">lcd/Mcount_delay_count_cy&lt;0&gt;</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/ziku/Mrom_douta3881</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_3159_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_241</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_23_f5_5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_2935</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_24_f5_7</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/adr&lt;0&gt;1</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/adr&lt;0&gt;451_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_2825</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_30_f5_10</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_3215</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_30_f5_20</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_3320</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_30_f5_21</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_2822</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_30_f5_29</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_3217</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_31_f5_22</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_3321</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_31_f5_16</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_209</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_25_f5_23</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_333</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_26_f5_22</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_288</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_26_f5_24</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_325</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_27_f5_32</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_3119</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_27_f5_28</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_361</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_29_f5_17</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_342</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_29_f5_19</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_3064</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_29_f5_28</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_2413</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_29_f5_37</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MMC/MMU/vga/Mmux_white_359</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MMC/MMU/vga/Mmux_white_2222_SW0_SW0_f5</arg>.  <arg fmt="%z" index="3">There is more than one F5MUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">lcd/lcd_e_mux0000233</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">lcd/lcd_e_mux0000_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+</messages>
+

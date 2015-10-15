@@ -1,0 +1,26 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Oct 14 20:01:13 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "led" LOCATE = SITE "E9" LEVEL 1;
+COMP "btn" LOCATE = SITE "D18" LEVEL 1;
+COMP "clk_50M" LOCATE = SITE "C9" LEVEL 1;
+COMP "RegNumPlus" LOCATE = SITE "H13" LEVEL 1;
+COMP "lcd_e" LOCATE = SITE "M18" LEVEL 1;
+COMP "hsync" LOCATE = SITE "F15" LEVEL 1;
+COMP "vga_b" LOCATE = SITE "G15" LEVEL 1;
+COMP "vga_g" LOCATE = SITE "H15" LEVEL 1;
+COMP "vga_r" LOCATE = SITE "H14" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "H18" LEVEL 1;
+COMP "vsync" LOCATE = SITE "F14" LEVEL 1;
+COMP "lcd_d<0>" LOCATE = SITE "R15" LEVEL 1;
+COMP "lcd_d<1>" LOCATE = SITE "R16" LEVEL 1;
+COMP "lcd_d<2>" LOCATE = SITE "P17" LEVEL 1;
+COMP "lcd_d<3>" LOCATE = SITE "M15" LEVEL 1;
+COMP "flash_ce" LOCATE = SITE "D16" LEVEL 1;
+COMP "lcd_rs" LOCATE = SITE "L18" LEVEL 1;
+COMP "lcd_rw" LOCATE = SITE "L17" LEVEL 1;
+NET "clk_50M_BUFGP/IBUFG" BEL "clk_50M_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+
